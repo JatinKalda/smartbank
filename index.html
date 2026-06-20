@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting…</title>
+  <!-- Meta refresh as a fallback -->
+  <meta http-equiv="refresh" content="0; url=docs/index.html">
+  <script>
+    (function(){
+      try {
+        // Compute a repo-relative path and redirect to docs/index.html
+        var base = window.location.pathname.replace(/\/$/, '');
+        // If the pathname already contains 'docs', avoid redirect loop
+        if (!/\/docs\//.test(base)) {
+          window.location.replace(base + '/docs/index.html');
+        }
+      } catch(e) {
+        // fallback to meta refresh above
+      }
+    })();
+  </script>
+</head>
+<body>
+  Redirecting to the project site — if you are not redirected automatically, <a href="docs/index.html">click here</a>.
+</body>
+</html>
